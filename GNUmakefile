@@ -2,7 +2,7 @@ export SHELL = /bin/bash
 export AWS_DEFAULT_REGION ?= us-east-1
 export TERRAFORM_PARALLELISM ?= 20
 
-include $(shell test -f .tardigrade-ci || curl -sSL -o .tardigrade-ci "https://raw.githubusercontent.com/plus3it/tardigrade-ci/master/bootstrap/Makefile.bootstrap"; echo .tardigrade-ci)
+include $(shell test -f .tardigrade-ci || curl -sSL -o .tardigrade-ci "https://raw.githubusercontent.com/MetroStar/tardigrade-ci/master/bootstrap/Makefile.bootstrap"; echo .tardigrade-ci)
 
 default:: again
 

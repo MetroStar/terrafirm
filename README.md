@@ -1,6 +1,6 @@
 ![Terrafirm diagram](architecture.png)
 # terrafirm
-Terrafirm performs integration tests of [Watchmaker](https://github.com/plus3it/watchmaker) using Terraform to launch Windows and Linux builds.
+Terrafirm performs integration tests of [Watchmaker](https://github.com/MetroStar/watchmaker) using Terraform to launch Windows and Linux builds.
 
 Terrafirm can be run locally or with [AWS CodeBuild](https://aws.amazon.com/codebuild/). In order to use it, you will need AWS credentials and to provide environment variables.
 
@@ -87,7 +87,7 @@ aws_instance.source_build["centos8stream"]: Still creating... [1m10s elapsed]
 | <a name="input_debug"></a> [debug](#input\_debug) | n/a | `bool` | `true` | no |
 | <a name="input_docker_slug"></a> [docker\_slug](#input\_docker\_slug) | n/a | `string` | `""` | no |
 | <a name="input_git_ref"></a> [git\_ref](#input\_git\_ref) | n/a | `string` | `"main"` | no |
-| <a name="input_git_repo"></a> [git\_repo](#input\_git\_repo) | n/a | `string` | `"https://github.com/plus3it/watchmaker.git"` | no |
+| <a name="input_git_repo"></a> [git\_repo](#input\_git\_repo) | n/a | `string` | `"https://github.com/MetroStar/watchmaker.git"` | no |
 | <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | n/a | `string` | `""` | no |
 | <a name="input_lx_args"></a> [lx\_args](#input\_lx\_args) | n/a | `string` | `"--log-dir=/var/log/watchmaker"` | no |
 | <a name="input_lx_instance_type"></a> [lx\_instance\_type](#input\_lx\_instance\_type) | n/a | `string` | `"t2.medium"` | no |
@@ -134,7 +134,7 @@ Terrafirm performs integration tests of Watchmaker. Development of Terrafirm als
 
 Local testing of a Terrafirm branch involves checking out the development branch on the local system. Environment variables do not indicate the correct Terrafirm reference to test because you have used Git to put the correct Terrafirm code in play on your local development system.
 
-CodeBuild testing of a remote Terrafirm branch involves commenting `go codebuild go` on a _Terrafirm_ repository pull request. Through the Terrafirm webhook, the correct Git reference to Terrafirm is passed to CodeBuild and CodeBuild fetches that Terrafirm reference. You can verify which Terrafirm reference was used by checking the `Build details` of an individual build in Codebuild. This will list, for example, `Source provider: GitHub, Repository: plus3it/terrafirm, Source version: pr/55`.
+CodeBuild testing of a remote Terrafirm branch involves commenting `go codebuild go` on a _Terrafirm_ repository pull request. Through the Terrafirm webhook, the correct Git reference to Terrafirm is passed to CodeBuild and CodeBuild fetches that Terrafirm reference. You can verify which Terrafirm reference was used by checking the `Build details` of an individual build in Codebuild. This will list, for example, `Source provider: GitHub, Repository: MetroStar/terrafirm, Source version: pr/55`.
 
 Additionally, remember that the Terrafirm reference (e.g., pull request) to test is used either on your local system or the CodeBuild test instance but not on each EC2 instance built though Terraform.
 

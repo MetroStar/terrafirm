@@ -48,7 +48,7 @@ variable "lx_instance_type" {
 }
 
 variable "git_repo" {
-  default = "https://github.com/plus3it/watchmaker.git"
+  default = "https://github.com/MetroStar/watchmaker.git"
   type    = string
 }
 

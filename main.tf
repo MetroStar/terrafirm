@@ -48,7 +48,7 @@ locals {
   scan_slug                        = var.scan_s3_url
   security_group_description       = "Used by Terrafirm (${local.resource_name})"
   timestamp                        = timestamp()
-  url_bootstrap                    = "https://raw.githubusercontent.com/plus3it/watchmaker/main/docs/files/bootstrap/watchmaker-bootstrap.ps1"
+  url_bootstrap                    = "https://raw.githubusercontent.com/MetroStar/watchmaker/main/docs/files/bootstrap/watchmaker-bootstrap.ps1"
   url_local_ip                     = "https://checkip.amazonaws.com"
   url_pypi                         = "https://pypi.org/simple"
   win_args                         = "${var.common_args} ${var.win_args}"
